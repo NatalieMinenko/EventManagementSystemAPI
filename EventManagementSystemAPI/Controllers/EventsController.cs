@@ -40,12 +40,6 @@ public class EventsController : ControllerBase
         return NoContent();
     }
 
-    //[HttpDelete("{id}/disenroll")]
-    //public IActionResult Disenroll([FromBody] EnrollRequest request)
-    //{
-    //    return NoContent();
-    //}
-
     [HttpDelete("{id}")]
     public IActionResult DeleteEvents([FromRoute] Guid id)
     {
