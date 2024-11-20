@@ -11,7 +11,8 @@ public class EventsController : ControllerBase
     [HttpPost]
     public IActionResult CreateEvent([FromBody] CreateEventRequest request)
     {
-        return Ok();
+        var newEventId = Guid.NewGuid();
+        return Ok(newEventId);
     }
 
     [HttpGet]
@@ -22,9 +23,9 @@ public class EventsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public ActionResult<FullInfoEventResponse> GetEventById([FromRoute] Guid id)
+    public ActionResult<EventWithUsersResponse> GetEventById([FromRoute] Guid id)
     {
-        var course = new FullInfoEventResponse();
+        var course = new EventWithUsersResponse();
         return Ok(course);
     }
 
