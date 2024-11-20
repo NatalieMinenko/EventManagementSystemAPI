@@ -9,22 +9,23 @@ namespace EventManagementSystemAPI.Controllers;
 public class UsersController : ControllerBase
 {
     [HttpPost]
-    public IActionResult Register([FromBody] RegisterUserRequest request)
+    public ActionResult Register([FromBody] RegisterUserRequest request)
     {
         var AddedUserId = new Guid();
         return Ok(AddedUserId);
     }
 
     [HttpPost("login")]
-    public ActionResult LogIn([FromBody] LoginRequest request)
+    public IActionResult LogIn([FromBody] LoginRequest request)
     {
         return NoContent();
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetUsersById([FromRoute] Guid id)
+    public ActionResult<UserWithEventsResponse> GetUsersById([FromRoute] Guid id)
     {
-        return NoContent();
+        var user = new UserWithEventsResponse();
+        return Ok(user);
     }
 
     [HttpGet]
