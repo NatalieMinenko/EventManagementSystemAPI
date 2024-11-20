@@ -1,4 +1,5 @@
 ﻿using EventManagementSystemAPI.Models.Requests;
+using EventManagementSystemAPI.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventManagementSystemAPI.Controllers;
@@ -10,42 +11,44 @@ public class UsersController : ControllerBase
     [HttpPost]
     public IActionResult Register([FromBody] RegisterUserRequest request)
     {
-        return Ok();
+        var AddedUserId = new Guid();
+        return Ok(AddedUserId);
     }
 
     [HttpPost("login")]
     public ActionResult LogIn([FromBody] LoginRequest request)
     {
-        return Ok();
+        return NoContent();
     }
 
     [HttpGet("{id}")]
     public IActionResult GetUsersById([FromRoute] Guid id)
     {
-        return Ok();
+        return NoContent();
     }
 
     [HttpGet]
-    public ActionResult GetUsers()
+    public ActionResult<List<UserResponse>> GetUsers()
     {
-        return Ok();
+        List<UserResponse> users = new List<UserResponse>();
+        return Ok(users);
     }
 
     [HttpPut("{id}")]
     public ActionResult UpdateUser([FromRoute] Guid id, [FromBody] UpdateUserRequest request)
     {
-        return Ok();
+        return NoContent();
     }
 
     [HttpDelete("{id}")]
     public IActionResult DeleteUser([FromRoute] Guid id)
     {
-        return Ok();
+        return NoContent();
     }
 
     [HttpPatch("{id}/deactivate")]
     public IActionResult DeactivateUser([FromRoute] Guid id)
     {
-        return Ok();
+        return NoContent();
     }
 }

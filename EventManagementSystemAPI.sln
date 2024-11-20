@@ -5,12 +5,16 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagementSystemAPI", "EventManagementSystemAPI\EventManagementSystemAPI.csproj", "{37500333-8F08-4DD2-82C5-F113A93DBB9C}"
 	ProjectSection(ProjectDependencies) = postProject
+		{95E6A080-7726-4C2A-A857-0412CF0D5412} = {95E6A080-7726-4C2A-A857-0412CF0D5412}
 		{E8C4637F-0501-42CE-BE32-608F5526350C} = {E8C4637F-0501-42CE-BE32-608F5526350C}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagementSystem.Core", "EventManagementSystem.Core\EventManagementSystem.Core.csproj", "{E8C4637F-0501-42CE-BE32-608F5526350C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagementSystem.DAL", "EventManagementSystem.DAL\EventManagementSystem.DAL.csproj", "{95E6A080-7726-4C2A-A857-0412CF0D5412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagementSystem.DAL", "EventManagementSystem.DAL\EventManagementSystem.DAL.csproj", "{95E6A080-7726-4C2A-A857-0412CF0D5412}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8C4637F-0501-42CE-BE32-608F5526350C} = {E8C4637F-0501-42CE-BE32-608F5526350C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

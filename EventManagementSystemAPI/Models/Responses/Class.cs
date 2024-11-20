@@ -1,6 +1,6 @@
 ﻿namespace EventManagementSystemAPI.Models.Responses
 {
-    public class FullInfoEventResponse
+    public class Class
     {
         public Guid Id { get; set; }
 
