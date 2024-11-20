@@ -6,9 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagementSystemAPI", "EventManagementSystemAPI\EventManagementSystemAPI.csproj", "{37500333-8F08-4DD2-82C5-F113A93DBB9C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E8C4637F-0501-42CE-BE32-608F5526350C} = {E8C4637F-0501-42CE-BE32-608F5526350C}
+		{F35151AA-7077-4030-B75E-33F49849DEBC} = {F35151AA-7077-4030-B75E-33F49849DEBC}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagementSystem.Core", "EventManagementSystem.Core\EventManagementSystem.Core.csproj", "{E8C4637F-0501-42CE-BE32-608F5526350C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagementSystem.DAL", "EventManagementSystem.DAL\EventManagementSystem.DAL.csproj", "{F35151AA-7077-4030-B75E-33F49849DEBC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8C4637F-0501-42CE-BE32-608F5526350C} = {E8C4637F-0501-42CE-BE32-608F5526350C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,10 @@ Global
 		{E8C4637F-0501-42CE-BE32-608F5526350C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8C4637F-0501-42CE-BE32-608F5526350C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8C4637F-0501-42CE-BE32-608F5526350C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35151AA-7077-4030-B75E-33F49849DEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35151AA-7077-4030-B75E-33F49849DEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35151AA-7077-4030-B75E-33F49849DEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35151AA-7077-4030-B75E-33F49849DEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
