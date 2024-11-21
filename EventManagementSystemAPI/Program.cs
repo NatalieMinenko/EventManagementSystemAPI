@@ -26,16 +26,6 @@ builder.Services.AddAuthentication(opt =>
      };
  });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("EnableCORS", builder =>
-    {
-        builder.AllowAnyOrigin()
-        .AllowAnyHeader()
-        .AllowAnyMethod();
-    });
-});
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -53,7 +43,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("EnableCORS");
 app.UseAuthentication();
 app.UseAuthorization();
 
