@@ -9,7 +9,7 @@ namespace EventManagementSystemAPI.Controllers;
 public class UsersController : ControllerBase
 {
     [HttpPost]
-    public ActionResult Register([FromBody] RegisterUserRequest request)
+    public ActionResult<Guid> Register([FromBody] RegisterUserRequest request)
     {
         var AddedUserId = new Guid();
         return Ok(AddedUserId);
