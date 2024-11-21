@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using System.Diagnostics.CodeAnalysis;
 
 namespace EventManagementSystemAPI.Models.Requests.Validators;
 
