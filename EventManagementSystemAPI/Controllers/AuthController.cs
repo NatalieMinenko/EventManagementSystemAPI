@@ -21,11 +21,11 @@ public class AuthController : ControllerBase
             }
             if (user.UserName == "johndoe" && user.Password == "def@123")
             {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
-                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345")); //const
+            var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                 var tokeOptions = new JwtSecurityToken(
-                issuer: "https://localhost:5001",
-                audience: "https://localhost:5001",
+                issuer: "https://localhost:5001", //const
+                audience: "https://localhost:5001", //const
                 claims: new List<Claim>(),
                 expires: DateTime.Now.AddMinutes(5),
                 signingCredentials: signinCredentials
