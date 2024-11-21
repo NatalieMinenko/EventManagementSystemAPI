@@ -3,7 +3,7 @@ using EventManagementSystemAPI.Models.Requests;
 
 namespace EventManagementSystemAPI.Controllers;
 
-[Route("api/registration")]
+[Route("api/registrations")]
 [ApiController]
 public class RegistrationsController : ControllerBase
 {
