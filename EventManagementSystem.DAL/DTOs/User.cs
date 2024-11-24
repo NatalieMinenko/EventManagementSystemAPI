@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem.DAL.DTOs
 {
-    internal class Users
+    internal class User
     {
     }
 }
