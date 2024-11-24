@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManagementSystem.DAL
+namespace EventManagementSystem.DAL;
+
+public class EventRepository
 {
-    internal class EventRepository
-    {
-    }
+
 }
