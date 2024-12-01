@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManagementSystem.DAL;
-
-public class UserRepository
+namespace EventManagementSystem.BLL.Services
 {
-
+    internal class UsersService
+    {
+    }
 }
