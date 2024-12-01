@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EventManagementSystem.DAL.DTOs;
 
-namespace EventManagementSystem.DAL.DTOs
+public class Event
 {
-    internal class Event
-    {
-    }
+    public Guid ID { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public DateTime DateTime { get; set; }
+    public string AdressOfEvent { get; set; }
+    public int MaxParticipants { get; set; }
+    public List<Registration> Registrations { get; set; }
 }

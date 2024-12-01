@@ -10,6 +10,6 @@
 
         public string AdressOfEvent { get; set; }
 
-        public int NumberOfParticipants { get; set; }
+        public int MaxOfParticipants { get; set; }
     }
 }
