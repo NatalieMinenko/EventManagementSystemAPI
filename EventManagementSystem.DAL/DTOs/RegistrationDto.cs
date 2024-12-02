@@ -1,10 +1,10 @@
 ﻿namespace EventManagementSystem.DAL.DTOs;
 
-public class Registration
+public class RegistrationDto
 {
     public Guid ID { get; set; }
     public Guid UserID { get; set; }
-    public User User { get; set; }
+    public UserDto User { get; set; }
     public Guid EventID { get; set; }
-    public Event Event { get; set; }
+    public EventDto Event { get; set; }
 }

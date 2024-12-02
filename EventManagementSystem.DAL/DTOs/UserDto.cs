@@ -2,7 +2,7 @@
 
 namespace EventManagementSystem.DAL.DTOs;
 
-public class User
+public class UserDto
 {
     public Guid Id { get; set; }
 
@@ -14,6 +14,6 @@ public class User
 
     public string Phone { get; set; }
     public string Email { get; set; }
-    public UserRole Role { get; set; }
-    public List<Registration> Registrations { get; set; }
+    public UserRoleDto Role { get; set; }
+    public List<RegistrationDto> Registrations { get; set; }
 }

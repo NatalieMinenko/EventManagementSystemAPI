@@ -1,6 +1,6 @@
 ﻿namespace EventManagementSystem.DAL.DTOs;
 
-public class Event
+public class EventDto
 {
     public Guid ID { get; set; }
     public string Name { get; set; }
@@ -8,5 +8,5 @@ public class Event
     public DateTime DateTime { get; set; }
     public string AdressOfEvent { get; set; }
     public int MaxParticipants { get; set; }
-    public List<Registration> Registrations { get; set; }
+    public List<RegistrationDto> Registrations { get; set; }
 }
