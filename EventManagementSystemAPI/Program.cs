@@ -34,7 +34,6 @@ builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserRequestValidato
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -45,6 +44,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+//app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 
