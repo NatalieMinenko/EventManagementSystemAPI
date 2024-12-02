@@ -16,4 +16,5 @@ public class UserDto
     public string Email { get; set; }
     public UserRoleDto Role { get; set; }
     public List<RegistrationDto> Registrations { get; set; }
+    public List<EventDto> Events { get; set; }
 }
