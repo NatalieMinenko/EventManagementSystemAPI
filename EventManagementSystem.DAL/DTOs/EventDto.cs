@@ -9,4 +9,5 @@ public class EventDto
     public string AdressOfEvent { get; set; }
     public int MaxParticipants { get; set; }
     public List<RegistrationDto> Registrations { get; set; }
+    public List<UserDto> Users { get; set; }
 }
