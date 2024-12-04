@@ -1,4 +1,6 @@
 ﻿using EventManagementSystem.DAL.DTOs;
+using EventManagementSystem.DAL.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementSystem.DAL.Repositories;
 

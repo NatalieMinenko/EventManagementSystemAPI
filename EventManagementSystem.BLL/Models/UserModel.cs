@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManagementSystem.BLL.Models
+namespace EventManagementSystem.BLL.Models;
+public class UserModel
 {
-    internal class UserModel
-    {
-    }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Email { get; set; }
+    public string Phone { get; set; }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using EventManagementSystem.DAL.Configurations;
 using EventManagementSystem.DAL.DTOs;
-using EventManagementSystem.DAL.Repositories;
 
 namespace EventManagementSystem.DAL;
 
@@ -16,6 +14,7 @@ public class Context : DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("EventManagementSystemAPI"));
+        //string connectionString = Options.ConnectionString;
+        //optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("EventManagementSystemAPI"));
     }
 }
