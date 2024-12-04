@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManagementSystem.BLL.Models
+namespace EventManagementSystem.BLL.Models;
+
+public class CreateEventModel
 {
-    internal class CreateEventModel
-    {
-    }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public DateTime DateTime { get; set; }
+    public string AdressOfEvent { get; set; }
+    public int MaxParticipants { get; set; }
 }
