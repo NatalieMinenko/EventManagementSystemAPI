@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventManagementSystem.DAL.DTOs;
 
-namespace EventManagementSystem.DAL.Repositories.Interfaces
+namespace EventManagementSystem.DAL.Repositories.Interfaces;
+public interface IUserRepository
 {
-    internal class IUserRepository
-    {
-    }
+    public void AddUser(UserDto user);
+    public UserDto? GetUserByEmail(string email);
+    public List<UserDto> GetAllUsers();
+    public UserDto GetUserById(Guid id);
+    public UserDto GetUserRoleByUserId(Guid userId);
+    public void UpdateUser(UserDto user, UserDto userUpdate);
+    public void UpdatePassword(UserDto user, string password);
+    public void DeleteUser(UserDto user);
+    public void DeactivateUser(UserDto user);
+    public IEnumerable<UserDto> GetUsersByEventId(Guid eventId);
+    public IEnumerable<EventDto> GetEventsByUserId(Guid userId);
 }
