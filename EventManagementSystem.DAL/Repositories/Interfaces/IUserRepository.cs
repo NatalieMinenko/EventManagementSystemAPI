@@ -12,6 +12,5 @@ public interface IUserRepository
     public void UpdatePassword(UserDto user, string password);
     public void DeleteUser(UserDto user);
     public void DeactivateUser(UserDto user);
-    public IEnumerable<UserDto> GetUsersByEventId(Guid eventId);
     public IEnumerable<EventDto> GetEventsByUserId(Guid userId);
 }

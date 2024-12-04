@@ -1,9 +1,9 @@
 ﻿using EventManagementSystem.DAL.DTOs;
+using EventManagementSystem.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementSystem.DAL.Repositories;
-
-public class EventRepository
+public class EventRepository : IEventRepository
 {
     private Context _context;
 
@@ -11,43 +11,43 @@ public class EventRepository
     {
         _context = new Context();
     }
-
-    public void AddEvent(EventDto event)
+    public void AddEvent(EventDto events)
     {
-        _context.Events.Add(event);
+        _context.Events.Add(events);
         _context.SaveChanges();
     }
-
-public void UpdateEvent(EventDto course)
+    public List<EventDto> GetAllEvents()
     {
-        _context.Events.Update(event);
+        var events = _context.Events.Where(e => e.IsDeactivated == false).ToList();
+        return events;
+    }
+    public EventDto? GetEventById(Guid id)
+    {
+        var events = _context.Events.Where(e => e.Id == id).FirstOrDefault();
+        return events;
+    }
+    public void UpdateEvent(EventDto events, EventDto eventUpdate)
+    {
+        events.Name = eventUpdate.Name;
+        events.Description = eventUpdate.Description;
+        events.AdressOfEvent = eventUpdate.AdressOfEvent;
+        events.DateTime = eventUpdate.DateTime;
+        events.MaxParticipants = eventUpdate.MaxParticipants;
         _context.SaveChanges();
     }
-
+    public void DeleteEvent(EventDto events)
+    {
+        _context.Events.Remove(events);
+        _context.SaveChanges();
+    }
+    public void DeactivateEvent(EventDto events)
+    {
+        events.IsDeactivated = true;
+        _context.SaveChanges();
+    }
     public IEnumerable<UserDto> GetUsersByEventId(Guid eventId)
     {
-        var users = _context.Events.Include(c => c.Users).Where(c => c.Id == eventId).FirstOrDefault();
+        var user = _context.Users.Include(u => u.Events).Where(u => u.Id == eventId).FirstOrDefault();
         return _context.Users.ToList();
     }
-
-    public IEnumerable<EventDto> GetGradesByCourseId(Guid eventId)
-    {
-        var grades = _context.GradeBooks.Include(g => g.Grade).Where(c => c.Id == eventId).ToList();
-        return _context.Courses.ToList();
-    }
-
-    public void AddGradeByCourseId(GradeBookDto gradeBook, Guid courseId)
-    {
-        var grade = _context.GradeBooks.Include(s => s.Grade).Where(c => c.Id == courseId).SingleOrDefault();
-        _context.GradeBooks.Add(grade);
-        _context.SaveChanges();
-    }
-
-    public void UpdateGradeByCourseId(GradeBookDto gradeBook, Guid courseId)
-    {
-        var grade = _context.GradeBooks.Include(s => s.Grade).Where(c => c.Id == courseId).SingleOrDefault();
-        _context.GradeBooks.Update(grade);
-        _context.SaveChanges();
-    }
 }
-

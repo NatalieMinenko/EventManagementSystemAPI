@@ -6,6 +6,7 @@
 
         public string Description { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime DateTime { get; set; }
+        public string AddressOfEvent { get; set; }
     }
 }
