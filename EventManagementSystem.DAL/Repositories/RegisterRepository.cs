@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventManagementSystem.DAL.DTOs;
 
-namespace EventManagementSystem.DAL.Repositories
+namespace EventManagementSystem.DAL.Repositories;
+
+public class RegisterRepository : IRegisterRepository
 {
-    internal class RegisterRepository
+    private Context _context;
+
+    public RegisterRepository()
     {
+        _context = new Context();
+    }
+    public List<RegistrationDto> GetAllRegistrations()
+    {
+        var registration = _context.Registrations.ToList();
+        return registration;
+    }
+    public RegistrationDto? GetRegistrationById(Guid id)
+    {
+        var registration = _context.Registrations.Where(r => r.Id == id).FirstOrDefault();
+        return registration;
+    }
+    public void DeleteRegistration(RegistrationDto registration)
+    {
+        _context.Registrations.Remove(registration);
+        _context.SaveChanges();
     }
 }
