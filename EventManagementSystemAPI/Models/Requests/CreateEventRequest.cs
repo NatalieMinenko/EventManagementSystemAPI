@@ -6,10 +6,10 @@
 
         public string? Description { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime DateTime { get; set; }
 
         public string AdressOfEvent { get; set; }
 
-        public int MaxOfParticipants { get; set; }
+        public int MaxParticipants { get; set; }
     }
 }
