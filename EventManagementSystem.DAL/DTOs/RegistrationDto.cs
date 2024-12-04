@@ -2,7 +2,7 @@
 
 public class RegistrationDto
 {
-    public Guid ID { get; set; }
+    public Guid Id { get; set; }
     public Guid UserID { get; set; }
     public List<UserDto> Users { get; set; }
     public Guid EventID { get; set; }
