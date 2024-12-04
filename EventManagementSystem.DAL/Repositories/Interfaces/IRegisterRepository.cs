@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventManagementSystem.DAL.DTOs;
 
-namespace EventManagementSystem.DAL.Repositories.Interfaces
+namespace EventManagementSystem.DAL.Repositories.Interfaces;
+public interface IRegisterRepository
 {
-    internal class IRegisterRepository
-    {
-    }
+    public List<RegistrationDto> GetAllRegistrations();
+    public RegistrationDto? GetRegistrationById(Guid id);
+    public void DeleteRegistration(RegistrationDto registration);
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManagementSystem.BLL.Services
+namespace EventManagementSystem.BLL.Models
 {
-    internal class UsersService
+    internal class UpdateUserPasswordModel
     {
     }
 }
