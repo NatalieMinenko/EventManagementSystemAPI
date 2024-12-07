@@ -59,7 +59,7 @@ public class UserRepository : IUserRepository
         user.IsDeactivated = true;
         _context.SaveChanges();
     }
-    public IEnumerable<EventDto> GetEventsByUserId(Guid userId)
+    public List<EventDto> GetEventsByUserId(Guid userId)
     {
         var events = _context.Events.Include(e => e.Users).Where(e => e.Id == userId).FirstOrDefault();
         return _context.Events.ToList();
