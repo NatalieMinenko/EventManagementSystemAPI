@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using EventManagementSystem.BLL.Models;
+using EventManagementSystem.DAL.DTOs;
 
-namespace EventManagementSystem.BLL.Mappings
+namespace EventManagementSystem.BLL.Mappings;
+
+public class EventMapperProfile : Profile
 {
-    internal class EventMapperProfile
+    public EventMapperProfile()
     {
+        CreateMap<EventModel, EventDto>();
+        CreateMap<EventDto, EventModel>();
     }
 }
