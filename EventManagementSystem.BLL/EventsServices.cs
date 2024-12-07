@@ -27,7 +27,7 @@ public class EventsServices : IEventsServices
             });
         _mapper = new Mapper(config);
     }
-    public void AddEvent(EventModel events)
+    public void AddEvent(CreateEventModel events)
     {
         var eventId = _mapper.Map<EventDto>(events);
 
