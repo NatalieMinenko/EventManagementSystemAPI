@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem.BLL
 {
-    internal class Registerservices
+    internal class RegisterServices
     {
     }
 }
