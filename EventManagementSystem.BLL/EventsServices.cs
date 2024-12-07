@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using EventManagementSystem.BLL.Interfaces;
+using EventManagementSystem.DAL.DTOs;
+using EventManagementSystem.DAL.Repositories;
+using EventManagementSystem.DAL.Repositories.Interfaces;
 
-namespace EventManagementSystem.BLL
-{
-    internal class EventsServices
-    {
-    }
-}
+namespace EventManagementSystem.BLL;
+
+//public class //EventsServices : IEventsServices
+//{
+//    private readonly IEventRepository _eventRepository;
+
+//    private Mapper mapper;
+//    public //EventRepository()
+//    { }
+//}

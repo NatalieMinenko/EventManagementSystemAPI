@@ -36,12 +36,12 @@ public class UserRepository : IUserRepository
         var role = _context.Users.Include(u => u.Role).Where(r => r.Id == userId).FirstOrDefault();
         return role;
     }
-    public void UpdateUser(UserDto user, UserDto userUpdate)
+    public void UpdateUser(UserDto user, UserDto newUser)
     {
-        user.FirstName = userUpdate.FirstName;
-        user.LastName = userUpdate.LastName;
-        user.Email = userUpdate.Email;
-        user.Phone = userUpdate.Phone;
+        user.FirstName = newUser.FirstName;
+        user.LastName = newUser.LastName;
+        user.Email = newUser.Email;
+        user.Phone = newUser.Phone;
         _context.SaveChanges();
     }
     public void UpdatePassword(UserDto user, string password)

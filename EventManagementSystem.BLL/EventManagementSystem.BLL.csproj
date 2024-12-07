@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mappings\" />
+    <ProjectReference Include="..\EventManagementSystem.Core\EventManagementSystem.Core.csproj" />
+    <ProjectReference Include="..\EventManagementSystem.DAL\EventManagementSystem.DAL.csproj" />
   </ItemGroup>
 
 </Project>
