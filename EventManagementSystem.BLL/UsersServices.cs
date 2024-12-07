@@ -18,6 +18,8 @@ public class UsersServices : IUsersServices
 {
     private readonly IUserRepository _userRepository;
 
+    private readonly IEventRepository _eventRepository;
+
     private readonly IMapper _mapper;
     public UsersServices(IUserRepository repository)
     {
@@ -27,6 +29,7 @@ public class UsersServices : IUsersServices
             cfg =>
             {
                 cfg.AddProfile(new UserMapperProfile());
+                cfg.AddProfile(new EventMapperProfile());
             });
         _mapper = new Mapper(config);
     }
@@ -140,17 +143,17 @@ public class UsersServices : IUsersServices
 
         _userRepository.DeactivateUser(userDto);
     }
-    public IEnumerable<UserModel> GetEventsByUserId(Guid userId)
+    public List<EventModel> GetEventsByUserId(Guid userId)
     {
-        var events = _userRepository.GetEventsByUserId(userId);
+        var eventDtos = _userRepository.GetEventsByUserId(userId);
 
-        if (events == null)
+        if (eventDtos == null)
 
             throw new EntityNotFoundException($"Events with id{userId} was not found");
 
-        var result = _mapper.Map<IEnumerable<UserModel>>(events);
+        var events = _mapper.Map<List<EventModel>>(eventDtos);
 
-        return result;
+        return events;
     }
 }
 

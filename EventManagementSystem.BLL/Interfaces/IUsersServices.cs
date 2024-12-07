@@ -18,5 +18,5 @@ public interface IUsersServices
     void UpdateUser(Guid id, UpdateUserModel user);
     void DeleteUser(Guid id);
     void DeactivateUser(Guid id);
-    IEnumerable<UserModel> GetEventsByUserId(Guid userId);
+    List<EventModel> GetEventsByUserId(Guid userId);
 }
