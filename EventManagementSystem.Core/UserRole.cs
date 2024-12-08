@@ -2,7 +2,7 @@
 
 public enum UserRole
 {
-    Unknown = 0,
-    User,
-    Admin
+    Admin = 1,
+    Participant,
+    EventOrganizer
 }
