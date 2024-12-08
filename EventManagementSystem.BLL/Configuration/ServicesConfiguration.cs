@@ -5,6 +5,7 @@ using EventManagementSystem.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using EventManagementSystem.BLL.Mappings;
 
 namespace EventManagementSystem.BLL.Configuration;
 
@@ -15,5 +16,6 @@ public static class ServicesConfiguration
         services.AddScoped<IUsersServices, UsersServices>();
         services.AddScoped<IEventsServices, EventsServices>();
         //services.AddScoped<IRegisterServices, RegisterServices>();
+        services.AddAutoMapper(typeof(UserMapperProfile).Assembly);
     }
 }

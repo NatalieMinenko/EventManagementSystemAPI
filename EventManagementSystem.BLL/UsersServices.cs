@@ -14,25 +14,10 @@ using System.Security.Claims;
 using System.Text;
 
 namespace EventManagementSystem.BLL;
-public class UsersServices : IUsersServices
+public class UsersServices (
+    IUserRepository _userRepository,
+    IMapper _mapper): IUsersServices
 {
-    private readonly IUserRepository _userRepository;
-
-    private readonly IEventRepository _eventRepository;
-
-    private readonly IMapper _mapper;
-    public UsersServices(IUserRepository repository)
-    {
-        _userRepository = repository;
-
-        var config = new MapperConfiguration(
-            cfg =>
-            {
-                cfg.AddProfile(new UserMapperProfile());
-                cfg.AddProfile(new EventMapperProfile());
-            });
-        _mapper = new Mapper(config);
-    }
     public string? Authenticate(string email, string password)
     {
         var user = _userRepository.GetUserByEmail(email);

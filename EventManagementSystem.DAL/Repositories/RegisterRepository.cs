@@ -4,14 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementSystem.DAL.Repositories;
 
-public class RegisterRepository : IRegisterRepository
+public class RegisterRepository (Context _context): IRegisterRepository
 {
-    private Context _context;
-
-    public RegisterRepository()
-    {
-        _context = new Context();
-    }
     public List<RegistrationDto> GetAllRegistrations()
     {
         var registration = _context.Registrations.ToList();

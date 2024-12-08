@@ -3,14 +3,8 @@ using EventManagementSystem.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementSystem.DAL.Repositories;
-public class UserRepository : IUserRepository
+public class UserRepository (Context _context) : IUserRepository
 {
-    private Context _context;
-
-    public UserRepository()
-    {
-        _context = new Context();
-    }
     public void AddUser(UserDto user)
     {
         _context.Users.Add(user);
