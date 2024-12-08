@@ -1,49 +1,48 @@
 using FluentValidation.AspNetCore;
 using FluentValidation;
+using EventManagementSystemAPI.Configuration;
 using EventManagementSystemAPI.Models.Requests.Validators;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using EventManagementSystem.BLL.Configuration;
+using EventManagementSystem.DAL.Configuration;
+using EventManagementSystem.BLL.Exceptions;
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddAuthentication(opt =>
+public class Program
 {
-    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
- .AddJwtBearer(options =>
- {
-     options.TokenValidationParameters = new TokenValidationParameters
-     {
-         ValidateIssuer = true,
-         ValidateAudience = true,
-         ValidateLifetime = true,
-         ValidateIssuerSigningKey = true,
-         ValidIssuer = "https://localhost:5001",
-         ValidAudience = "https://localhost:5001",
-         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
-     };
- });
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserRequestValidator>();
+        builder.Configuration
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+            .AddJsonFile("appsettings.secrets.json", optional: true, reloadOnChange: true)
+            .AddCommandLine(args)
+            .AddEnvironmentVariables()
+            .Build();
 
-var app = builder.Build();
+        var configuration = builder.Configuration;
 
-app.UseSwagger();
-app.UseSwaggerUI();
+        builder.Services.AddApiServices();
+        builder.Services.AddBllServices();
+        builder.Services.AddDalServices(configuration);
 
-app.UseHttpsRedirection();
+        var app = builder.Build();
 
-app.UseAuthentication();
-app.UseAuthorization();
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
-//app.UseMiddleware<ExceptionMiddleware>();
+        app.UseHttpsRedirection();
 
-app.MapControllers();
+        app.UseAuthentication();
+        app.UseAuthorization();
 
-app.Run();
+        app.UseMiddleware<EntityNotFoundException>();
+
+        app.MapControllers();
+
+        app.Run();
+    }
+}
