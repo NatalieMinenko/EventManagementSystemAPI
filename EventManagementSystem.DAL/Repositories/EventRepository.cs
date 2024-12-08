@@ -3,14 +3,8 @@ using EventManagementSystem.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementSystem.DAL.Repositories;
-public class EventRepository : IEventRepository
+public class EventRepository (Context _context) : IEventRepository
 {
-    private Context _context;
-
-    public EventRepository()
-    {
-        _context = new Context();
-    }
     public void AddEvent(EventDto events)
     {
         _context.Events.Add(events);

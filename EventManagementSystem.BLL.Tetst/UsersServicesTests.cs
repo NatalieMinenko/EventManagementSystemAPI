@@ -18,7 +18,7 @@ public class UsersServicesTests
         _userRepositoryMock = new Mock<IUserRepository>();
         _eventRepositoryMock = new Mock<IEventRepository>();
         _registerRepositoryMock = new Mock<IRegisterRepository>();
-        //_sut = new UsersServices(_userRepositoryMock.Object, _eventRepositoryMock.Object, _registerRepositoryMock.Object);
+        _sut = new UsersServices(_userRepositoryMock.Object, _eventRepositoryMock.Object, _registerRepositoryMock.Object);
     }
     [Fact]
     public void Test1()

@@ -10,23 +10,10 @@ using Microsoft.Extensions.Logging;
 
 namespace EventManagementSystem.BLL;
 
-public class EventsServices : IEventsServices
+public class EventsServices (
+    IEventRepository _eventRepository,
+    IMapper _mapper): IEventsServices
 {
-    private readonly EventRepository _eventRepository;
-
-    private readonly IMapper _mapper;
-
-    public EventsServices(IEventRepository repository)
-    {
-        _eventRepository = new();
-
-        var config = new MapperConfiguration(
-            cfg =>
-            {
-                cfg.AddProfile(new UserMapperProfile());
-            });
-        _mapper = new Mapper(config);
-    }
     public void AddEvent(CreateEventModel events)
     {
         var eventId = _mapper.Map<EventDto>(events);
