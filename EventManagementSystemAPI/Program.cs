@@ -7,7 +7,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using EventManagementSystem.BLL.Configuration;
 using EventManagementSystem.DAL.Configuration;
+using EventManagementSystem.BLL.ExceptionMiddleware;
 using EventManagementSystem.BLL.Exceptions;
+using Microsoft.AspNetCore.Builder;
 
 public class Program
 {
@@ -39,7 +41,7 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
 
-        app.UseMiddleware<EntityNotFoundException>();
+        app.UseMiddleware<ExceptionMiddleware>();
 
         app.MapControllers();
 

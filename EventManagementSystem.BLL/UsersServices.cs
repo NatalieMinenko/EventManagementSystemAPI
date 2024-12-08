@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EventManagementSystem.BLL.ExceptionMiddleware;
 using EventManagementSystem.BLL.Exceptions;
 using EventManagementSystem.BLL.Interfaces;
 using EventManagementSystem.BLL.Mappings;
@@ -43,9 +44,9 @@ public class UsersServices (
         var userId = _mapper.Map<UserDto>(user);
 
         if (userId == null)
-
+        {
             throw new EntityNotFoundException($"User with id{user} was not found");
-
+        }
         _userRepository.AddUser(userId);
     }
     public UserModel GetUserByEmail(string email)
@@ -76,9 +77,9 @@ public class UsersServices (
         var user = _userRepository.GetUserById(userId);
 
         if (user == null)
-
-            throw new EntityNotFoundException($"Role with id{userId} was not found");
-
+        {
+            throw new EntityNotFoundException($"User with id{userId} was not found");
+        }
         var result = _mapper.Map<UserModel>(user);
 
         return result;
@@ -88,9 +89,9 @@ public class UsersServices (
         var role = _userRepository.GetUserRoleByUserId(userId);
 
         if (role == null)
-
+        {
             throw new EntityNotFoundException($"Role with id{role} was not found");
-
+        }
         var result = _mapper.Map<UserModel>(role);
 
         return result;
@@ -101,9 +102,12 @@ public class UsersServices (
 
         if (existingUser == null)
         {
-            throw new EntityNotFoundException($"User with id {id} was not found");
+            throw new EntityNotFoundException($"User with id{id} was not found");
         }
-
+        if (existingUser.IsDeactivated)
+        {
+            throw new EntityConflictException($"User with id{id} is deactivated");
+        }
         var updatedUser = _mapper.Map(id, existingUser);
 
         _userRepository.UpdateUser(existingUser, updatedUser);
@@ -113,9 +117,9 @@ public class UsersServices (
         var user = _userRepository.GetUserById(userId);
 
         if (user == null)
-
+        {
             throw new EntityNotFoundException($"User with {userId} was not found");
-
+        }
         _userRepository.DeleteUser(user);
     }
     public void DeactivateUser(Guid userId)
