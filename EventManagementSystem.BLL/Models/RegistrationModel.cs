@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace EventManagementSystem.BLL.Models;
 public class RegistrationModel
 {
+    public Guid Id { get; set; }
     public Guid UserId { get; set; }
     public UserModel User { get; set; }
     public Guid EventId { get; set; }
