@@ -10,7 +10,7 @@ public class CreateEventModel
 {
     public string Name { get; set; }
     public string Description { get; set; }
-    public DateTime DateTime { get; set; }
-    public string AdressOfEvent { get; set; }
+    public DateTime Date { get; set; }
+    public string Adress { get; set; }
     public int MaxParticipants { get; set; }
 }
