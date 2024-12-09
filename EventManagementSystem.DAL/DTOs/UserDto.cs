@@ -12,4 +12,5 @@ public class UserDto
     public bool IsDeactivated { get; set; }
     public List<RegistrationDto> Registrations { get; set; }
     public List<EventDto> Events { get; set; }
+    List<UserDto> allParticipants { get; set; }
 }

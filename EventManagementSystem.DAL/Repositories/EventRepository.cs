@@ -1,6 +1,8 @@
 ﻿using EventManagementSystem.DAL.DTOs;
 using EventManagementSystem.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EventManagementSystem.DAL.Repositories;
 public class EventRepository (Context _context) : IEventRepository
@@ -39,9 +41,21 @@ public class EventRepository (Context _context) : IEventRepository
         events.IsDeactivated = true;
         _context.SaveChanges();
     }
-    public IEnumerable<UserDto> GetUsersByEventId(Guid eventId)
+    public List<UserDto> GetUsersByEventId(Guid eventId)
     {
         var user = _context.Users.Include(u => u.Events).Where(u => u.Id == eventId).FirstOrDefault();
         return _context.Users.ToList();
+    }
+    public List<UserDto> GetNumberOfParticipantByEventId(Guid eventId)
+    {
+        List<UserDto> participants = new List<UserDto>();
+
+        List<UserDto> allParticipants = _context.Users.Where(u => u.Id == eventId).ToList();
+
+        participants = allParticipants;
+
+        int numberOfParticipants = participants.Count;
+
+        return allParticipants;
     }
 }

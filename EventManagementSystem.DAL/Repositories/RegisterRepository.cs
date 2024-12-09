@@ -6,9 +6,9 @@ namespace EventManagementSystem.DAL.Repositories;
 
 public class RegisterRepository (Context _context): IRegisterRepository
 {
-    public List<RegistrationDto> GetAllRegistrations()
+    public RegistrationDto Registrate (RegistrationDto registration)
     {
-        var registration = _context.Registrations.ToList();
+        var RegistrationDto = _context.Registrations.ToList();
         return registration;
     }
     public RegistrationDto? GetRegistrationById(Guid id)

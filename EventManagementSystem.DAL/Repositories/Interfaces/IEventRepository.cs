@@ -9,6 +9,7 @@ public interface IEventRepository
     public void UpdateEvent(EventDto events, EventDto eventUpdate);
     public void DeleteEvent(EventDto events);
     public void DeactivateEvent(EventDto events);
-    public IEnumerable<UserDto> GetUsersByEventId(Guid eventId);
+    public List<UserDto> GetUsersByEventId(Guid eventId);
+    public List<UserDto> GetNumberOfParticipantByEventId(Guid eventId);
 }
 

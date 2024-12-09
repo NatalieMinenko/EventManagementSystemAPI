@@ -3,7 +3,7 @@
 namespace EventManagementSystem.DAL.Repositories.Interfaces;
 public interface IRegisterRepository
 {
-    public List<RegistrationDto> GetAllRegistrations();
+    public RegistrationDto? Registrate(RegistrationDto registration);
     public RegistrationDto? GetRegistrationById(Guid id);
     public void DeleteRegistration(RegistrationDto registration);
 }

@@ -90,4 +90,16 @@ public class EventsServices (
 
         return result;
     }
+    public List<UserDto> GetNumberOfParticipantByEventId(Guid eventId)
+    {
+        List<UserDto> participants = new List<UserDto>();
+
+        List<UserDto> allParticipants = GetNumberOfParticipantByEventId(eventId);
+
+        participants = allParticipants;
+
+        int numberOfParticipants = participants.Count;
+
+        return participants;
+    }
 }
