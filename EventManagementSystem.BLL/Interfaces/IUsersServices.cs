@@ -13,7 +13,7 @@ public interface IUsersServices
     void AddUser(UserModel user);
     UserModel GetUserByEmail(string email);
     List<UserModel> GetAllUsers();
-    UserModel GetUsersById(Guid userId);
+    UserModel GetUserById(Guid userId);
     UserModel GetUserRoleByUserId(Guid userId);
     void UpdateUser(Guid id, UpdateUserModel user);
     void DeleteUser(Guid id);

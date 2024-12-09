@@ -1,15 +1,6 @@
-using FluentValidation.AspNetCore;
-using FluentValidation;
-using EventManagementSystemAPI.Configuration;
-using EventManagementSystemAPI.Models.Requests.Validators;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using EventManagementSystem.BLL.Configuration;
 using EventManagementSystem.DAL.Configuration;
-using EventManagementSystem.BLL.ExceptionMiddleware;
-using EventManagementSystem.BLL.Exceptions;
-using Microsoft.AspNetCore.Builder;
+using EventManagementSystemAPI.Configuration;
 
 public class Program
 {

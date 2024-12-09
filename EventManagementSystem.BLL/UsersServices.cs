@@ -72,7 +72,7 @@ public class UsersServices (
 
         return users;
     }
-    public UserModel GetUsersById(Guid userId)
+    public UserModel GetUserById(Guid userId)
     {
         var user = _userRepository.GetUserById(userId);
 
