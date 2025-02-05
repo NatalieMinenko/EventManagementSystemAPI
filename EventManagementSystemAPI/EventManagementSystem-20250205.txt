@@ -1,0 +1,35 @@
+[05-02-2025 21:31:02.293 Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager INF] #: User profile is available. Using '"C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+[05-02-2025 21:31:02.468 Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager INF] #: Creating key {3fb2f297-f4de-43f7-865d-3c45df2a770e} with creation date 2025-02-05 18:31:02Z, activation date 2025-02-05 18:31:02Z, and expiration date 2025-05-06 18:31:02Z.
+[05-02-2025 21:31:02.477 Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository INF] #: Writing data to file '"C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys\key-3fb2f297-f4de-43f7-865d-3c45df2a770e.xml"'.
+[05-02-2025 21:31:02.913 Microsoft.Hosting.Lifetime INF] #: Now listening on: "https://localhost:7000"
+[05-02-2025 21:31:02.915 Microsoft.Hosting.Lifetime INF] #: Now listening on: "http://localhost:5249"
+[05-02-2025 21:31:03.067 Microsoft.Hosting.Lifetime INF] #: Application started. Press Ctrl+C to shut down.
+[05-02-2025 21:31:03.070 Microsoft.Hosting.Lifetime INF] #: Hosting environment: "Development"
+[05-02-2025 21:31:03.074 Microsoft.Hosting.Lifetime INF] #: Content root path: "C:\Users\User\source\repos\EventManagementSystemAPI\EventManagementSystemAPI"
+[05-02-2025 21:31:03.962 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger""" - null null
+[05-02-2025 21:31:04.175 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger""" - 301 0 null 233.9786ms
+[05-02-2025 21:31:04.190 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/index.html""" - null null
+[05-02-2025 21:31:04.251 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 61.5749ms
+[05-02-2025 21:31:04.277 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/swagger-ui.css""" - null null
+[05-02-2025 21:31:04.284 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/_vs/browserLink""" - null null
+[05-02-2025 21:31:04.277 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/index.css""" - null null
+[05-02-2025 21:31:04.280 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/swagger-ui-standalone-preset.js""" - null null
+[05-02-2025 21:31:04.278 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/index.js""" - null null
+[05-02-2025 21:31:04.415 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware INF] #: Sending file. Request path: '"/index.css"'. Physical path: '"N/A"'
+[05-02-2025 21:31:04.443 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/index.js""" - 200 null "application/javascript;charset=utf-8" 165.3707ms
+[05-02-2025 21:31:04.447 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/index.css""" - 200 202 "text/css" 170.354ms
+[05-02-2025 21:31:04.279 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/_framework/aspnetcore-browser-refresh.js""" - null null
+[05-02-2025 21:31:04.278 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/swagger-ui-bundle.js""" - null null
+[05-02-2025 21:31:04.446 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware INF] #: Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+[05-02-2025 21:31:04.446 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware INF] #: Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+[05-02-2025 21:31:04.473 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/swagger-ui-standalone-preset.js""" - 200 230007 "text/javascript" 194.2542ms
+[05-02-2025 21:31:04.475 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/swagger-ui.css""" - 200 152035 "text/css" 198.7761ms
+[05-02-2025 21:31:04.468 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/_framework/aspnetcore-browser-refresh.js""" - 200 13800 "application/javascript; charset=utf-8" 188.9055ms
+[05-02-2025 21:31:04.538 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware INF] #: Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+[05-02-2025 21:31:04.543 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/swagger-ui-bundle.js""" - 200 1426001 "text/javascript" 266.0033ms
+[05-02-2025 21:31:04.544 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 264.0408ms
+[05-02-2025 21:31:04.738 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/v1/swagger.json""" - null null
+[05-02-2025 21:31:04.738 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request starting "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/favicon-32x32.png""" - null null
+[05-02-2025 21:31:04.758 Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware INF] #: Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+[05-02-2025 21:31:04.764 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 26.3839ms
+[05-02-2025 21:31:04.769 Microsoft.AspNetCore.Hosting.Diagnostics INF] #: Request finished "HTTP/2" "GET" "https"://"localhost:7000""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 31.1895ms

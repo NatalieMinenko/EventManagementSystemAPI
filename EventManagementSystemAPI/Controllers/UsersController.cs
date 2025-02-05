@@ -6,7 +6,7 @@ namespace EventManagementSystemAPI.Controllers;
 
 [Route("api/users")]
 [ApiController]
-public class UsersController : ControllerBase
+public class UsersController(ILogger<UsersController> logger) : ControllerBase
 {
     [HttpPost]
     public ActionResult<Guid> Register([FromBody] RegisterUserRequest request)
@@ -24,6 +24,8 @@ public class UsersController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<UserWithEventsResponse> GetUsersById([FromRoute] Guid id)
     {
+        logger.LogInformation("Information");
+        logger.LogWarning("but with warning also");
         var user = new UserWithEventsResponse();
         return Ok(user);
     }

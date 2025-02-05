@@ -1,12 +1,15 @@
 using EventManagementSystem.BLL.Configuration;
 using EventManagementSystem.DAL.Configuration;
 using EventManagementSystemAPI.Configuration;
+using Serilog;
 
 public class Program
 {
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Host.UseSerilog((context, loggerConfiguration) =>
+            loggerConfiguration.ReadFrom.Configuration(context.Configuration));
 
         builder.Configuration
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
